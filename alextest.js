@@ -14,8 +14,8 @@ app.controller('AlexTestCtrl', ['$scope', '$http', '$log', function ($scope, $ht
         enableHorizontalScrollbar: 0,
         enableVerticalScrollbar: 1,
         columnDefs: [
-          { name: 'Name', field: 'name', width: 140 },
-          { name: 'Address', field: 'address', width: 400 },
+            { name: 'Name', field: 'name', width: 140 },
+            { name: 'Address', field: 'address', width: 400 },
         ],
         data: [],
         rowHeight: 24,
@@ -24,14 +24,33 @@ app.controller('AlexTestCtrl', ['$scope', '$http', '$log', function ($scope, $ht
     // Defines a function to Load the data from your json file - this will only work from 
     // a web server
     this.getPerfData = function getPerfData() {
+
+        return $http({
+            method: "GET",
+            url: "http://localhost:3000/alextestdata.json"
+        }).then(function mySucces(response) {
+            var dd = eval(response.data);
+            dd = dd.CommercialCompanies;
+            $scope.gridOptions.data.length = 0;
+            angular.forEach(dd, function (row) {
+                $scope.gridOptions.data.push(row);
+            });
+        }, function myError(response) {
+            $scope.myWelcome = response.statusText;
+        });
+
+
+/*
+
         return $http.get('alextestdata.json').success(function (response) {
-           var dd = eval(response);
+            var dd = eval(response);
             dd = dd.CommercialCompanies;
             $scope.gridOptions.data.length = 0;
             angular.forEach(dd, function (row) {
                 $scope.gridOptions.data.push(row);
             });
         });
+        */
     };
 
     // Call the function that gets the data

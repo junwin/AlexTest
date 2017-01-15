@@ -1,0 +1,22 @@
+{
+  "name": "alextest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "lite": "lite-server --port 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junwin/AlexTest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/junwin/AlexTest/issues"
+  },
+  "homepage": "https://github.com/junwin/AlexTest#readme",
+  "dependencies": {
+    "lite-server": "^2.2.2"
+  }
+}
