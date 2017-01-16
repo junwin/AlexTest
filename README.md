@@ -1,5 +1,6 @@
 # AlexTest
 Simple test grid - essentially a repo where I play with Angular 1
+There is a simple bar chart added
 
 Install
 You need to have NPM installed
@@ -18,3 +19,10 @@ You need to install the Chrome debugger
 
 Running  
 npm run lite
+
+
+Gulp
+npm install gulp-cli -g
+npm install gulp -D
+touch gulpfile.js
+gulp --help
