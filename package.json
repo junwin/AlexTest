@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/junwin/AlexTest#readme",
   "dependencies": {
+    "angular-chart.js": "^1.1.1",
+    "chart.js": "^2.4.0",
     "lite-server": "^2.2.2"
   }
 }
