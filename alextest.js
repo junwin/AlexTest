@@ -2,6 +2,7 @@ var app = angular.module('alextest', ['ngTouch', 'ngAnimate', 'ui.bootstrap', 'u
 
 app.controller('AlexTestCtrl', ['$scope', '$http', '$log', function ($scope, $http, $log) {
 
+
     // Define the options for the grid used to display the json data
     $scope.gridOptions = {
         enableGridMenu: true,
@@ -26,7 +27,7 @@ app.controller('AlexTestCtrl', ['$scope', '$http', '$log', function ($scope, $ht
     this.getPerfData = function getPerfData() {
         return $http({
             method: "GET",
-            url: "http://localhost:3000/alextestdata.json"
+            url: "alextestdata.html"
         }).then(function mySucces(response) {
             var dd = eval(response.data);
             dd = dd.CommercialCompanies;
